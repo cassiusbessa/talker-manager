@@ -4,7 +4,8 @@ const express = require('express');
 const talkersRoutes = express.Router();
 const services = require('../services');
 
-talkersRoutes.get('/', services.getAll);
-talkersRoutes.get('/:id', services.getById);
+talkersRoutes.get('/talker', services.getAll);
+talkersRoutes.get('/talker/:id', services.getById);
+talkersRoutes.post('/login', services.login);
 
 module.exports = talkersRoutes;
