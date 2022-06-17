@@ -3,9 +3,10 @@ const express = require('express');
 
 const talkersRoutes = express.Router();
 const services = require('../services');
+const middlewares = require('../middlewares');
 
 talkersRoutes.get('/talker', services.getAll);
 talkersRoutes.get('/talker/:id', services.getById);
-talkersRoutes.post('/login', services.login);
+talkersRoutes.post('/login', middlewares.loginValidator, services.login);
 
 module.exports = talkersRoutes;

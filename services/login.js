@@ -6,9 +6,12 @@ const login = (req, res, _next) => {
   //   hash,
   // });
   // return res.set('token', hashGenerator(password));
-  return res.status(200).set('Content-Type', 'application/json').json({
+  return res.status(200).json({
     token: hashGenerator(password),
   });
+  // return res.status(200).json('Content-Type', 'application/json').json({
+  //   token: hashGenerator(password),
+  // });
 };
 
 module.exports = login;
