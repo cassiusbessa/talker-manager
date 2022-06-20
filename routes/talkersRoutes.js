@@ -8,5 +8,6 @@ const middlewares = require('../middlewares');
 talkersRoutes.get('/talker', services.getAll);
 talkersRoutes.get('/talker/:id', services.getById);
 talkersRoutes.post('/login', middlewares.loginValidator, services.login);
+talkersRoutes.post('/talker', middlewares.tokenValidator, services.createUser);
 
 module.exports = talkersRoutes;

@@ -1,8 +1,8 @@
 const fs = require('fs/promises');
 
-const read = async () => {
+const read = async (file) => {
   try {
-    const data = await fs.readFile('talker.json', { encoding: 'utf8' });
+    const data = await fs.readFile(file, { encoding: 'utf8' });
     return JSON.parse(data);    
   } catch (err) {
     console.log(err.message);
