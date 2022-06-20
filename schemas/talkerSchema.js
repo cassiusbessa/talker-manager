@@ -9,7 +9,7 @@ const talkerSchema = Joi.object({
   age: Joi.number().required().min(18)
     .messages({
       'any.required': 'O campo "age" é obrigatório',
-      'string.min': 'A pessoa palestrante deve ser maior de idade',
+      'number.min': 'A pessoa palestrante deve ser maior de idade',
  }),
  talk: Joi.object({
   watchedAt: Joi.date().format('DD/MM/YYYY').required()
@@ -20,11 +20,14 @@ const talkerSchema = Joi.object({
   rate: Joi.number().required().min(1).max(5)
   .messages({
     'any.required': 'O campo "rate" é obrigatório',
-    'string.min': 'O campo "rate" deve ser um inteiro de 1 à 5',
-    'string.max': 'O campo "rate" deve ser um inteiro de 1 à 5',
+    'number.min': 'O campo "rate" deve ser um inteiro de 1 à 5',
+    'number.max': 'O campo "rate" deve ser um inteiro de 1 à 5',
 
   }),
- }).required(),
+ }).required()
+ .messages({
+  'any.required': 'O campo "talk" é obrigatório',
+ }),
 }).required();
 
 module.exports = talkerSchema;
