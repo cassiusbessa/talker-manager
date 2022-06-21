@@ -3,6 +3,7 @@ const getById = require('./getById');
 const login = require('./login');
 const newTalker = require('./newTalker');
 const editTalker = require('./editTalker');
+const deleteTalker = require('./deleteTalker');
 
 module.exports = {
   getAll,  
@@ -10,4 +11,5 @@ module.exports = {
   login,
   newTalker,
   editTalker,
+  deleteTalker,  
 };

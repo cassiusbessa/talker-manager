@@ -12,5 +12,6 @@ talkersRoutes.post('/talker', middlewares.tokenValidator, middlewares.newTalkerV
 services.newTalker);
 talkersRoutes.put('/talker/:id', middlewares.tokenValidator, middlewares.newTalkerValidator, 
 services.editTalker);
+talkersRoutes.delete('/talker/:id', middlewares.tokenValidator, services.deleteTalker);
 
 module.exports = talkersRoutes;
