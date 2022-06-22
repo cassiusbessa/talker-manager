@@ -6,6 +6,7 @@ const services = require('../services');
 const middlewares = require('../middlewares');
 
 talkersRoutes.get('/talker', services.getAll);
+talkersRoutes.get('/talker/search', middlewares.tokenValidator, services.searchByName);
 talkersRoutes.get('/talker/:id', services.getById);
 talkersRoutes.post('/login', middlewares.loginValidator, services.login);
 talkersRoutes.post('/talker', middlewares.tokenValidator, middlewares.newTalkerValidator, 
